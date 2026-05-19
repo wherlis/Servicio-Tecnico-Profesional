@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPM | Servicio Técnico</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b1120;
+    color:white;
+}
+
+/* NAVBAR */
+
+header{
+    width:100%;
+    padding:18px 40px;
+    background:rgba(15,23,42,0.95);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    box-shadow:0 2px 15px rgba(0,0,0,0.4);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#60a5fa;
+}
+
+button{
+    padding:12px 26px;
+    border:none;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+}
+
+/* INICIO */
+
+.inicio{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 30px 50px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1600');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.contenidoInicio{
+    max-width:850px;
+}
+
+.inicio h1{
+    font-size:65px;
+    margin-bottom:25px;
+    color:#60a5fa;
+}
+
+.inicio p{
+    font-size:22px;
+    line-height:1.8;
+    color:#e5e7eb;
+    margin-bottom:35px;
+}
+
+.botonPrincipal{
+    padding:15px 35px;
+    background:#3b82f6;
+    border-radius:40px;
+    font-size:18px;
+}
+
+/* GALERIA */
+
+.galeria{
+    display:none;
+    padding:130px 30px 70px;
+    background:#111827;
+    min-height:100vh;
+}
+
+.galeria h2{
+    text-align:center;
+    font-size:50px;
+    color:#60a5fa;
+    margin-bottom:50px;
+}
+
+.contenedor{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+/* TARJETAS */
+
+.card{
+    width:340px;
+    background:#1e293b;
+    border-radius:25px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.cardContenido{
+    padding:25px;
+}
+
+.card h3{
+    font-size:28px;
+    color:#93c5fd;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#d1d5db;
+    line-height:1.7;
+    font-size:16px;
+}
+
+/* INFO */
+
+.info{
+    display:none;
+    margin:50px auto 0;
+    max-width:900px;
+    background:#1e293b;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+.info h3{
+    color:#60a5fa;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.info p{
+    line-height:1.9;
+    color:#e5e7eb;
+    font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:25px;
+    color:#9ca3af;
+    font-size:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <button onclick="mostrarInicio()">Inicio</button>
+
+    <div class="logo">📱JPM</div>
+
+</header>
+
+<!-- INICIO -->
+
+<section class="inicio" id="inicio">
+
+    <div class="contenidoInicio">
+
+        <h1>Servicio Técnico Profesional</h1>
+
+        <p>
+            Especialistas en reparación de celulares Android y iPhone.
+            Ofrecemos cambio de pantallas, reparación de software,
+            mantenimiento, recuperación de sistemas y soluciones
+            técnicas con atención rápida y profesional
+        </p>
+
+        <button class="botonPrincipal" onclick="mostrarGaleria()">
+            Ver Servicios Técnicos
+        </button>
+
+    </div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="galeria" id="galeria">
+
+    <h2>Nuestros Servicios</h2>
+
+    <div class="contenedor">
+
+        <!-- REPARACION -->
+
+        <div class="card" onclick="mostrarReparacion()">
+
+            <img src="imagen1.jpeg">
+
+            <div class="cardContenido">
+
+                <h3>Reparación Profesional</h3>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- SOFTWARE -->
+
+        <div class="card" onclick="mostrarSoftware()">
+
+           <img src="imagen3.jpeg">
+
+            <div class="cardContenido">
+
+                <h3>Software y Recovery</h3>
+
+
+            </div>
+
+        </div>
+
+        <!-- CAMBIO DE PANTALLA -->
+
+        <div class="card" onclick="mostrarPantalla()">
+
+             <img src="imagen2.jpeg">
+
+            <div class="cardContenido">
+
+                <h3>Cambio de Pantalla</h3>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INFO -->
+
+    <div class="info" id="textoInfo"></div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 JPM | Servicio Técnico Profesional
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function mostrarInicio(){
+
+    document.getElementById("inicio").style.display = "flex";
+    document.getElementById("galeria").style.display = "none";
+
+}
+
+function mostrarGaleria(){
+
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("galeria").style.display = "block";
+
+}
+
+function mostrarReparacion(){
+
+    document.getElementById("textoInfo").style.display = "block";
+
+    document.getElementById("textoInfo").innerHTML = `
+
+    <h3>Reparación Profesional</h3>
+
+    <p>
+        La reparación profesional de celulares consiste
+        en realizar un diagnóstico completo del dispositivo
+        para identificar fallas en hardware o software.
+        Este servicio incluye limpieza interna, revisión
+        de componentes, solución de problemas técnicos,
+        reparación de piezas dañadas y mantenimiento
+        preventivo para mejorar el rendimiento y la vida
+        útil del celular. También se revisa el correcto
+        funcionamiento de la batería, cámaras, audio,
+        pantalla y conectividad del equipo
+    </p>
+
+    `;
+
+}
+
+function mostrarSoftware(){
+
+    document.getElementById("textoInfo").style.display = "block";
+
+    document.getElementById("textoInfo").innerHTML = `
+
+    <h3>Software y Recovery</h3>
+
+    <p>
+        El servicio de software y recovery permite
+        solucionar errores del sistema operativo que
+        afectan el funcionamiento del celular. Incluye
+        eliminación de bloqueos, recuperación del sistema,
+        actualización de software, instalación de firmware,
+        eliminación de virus y optimización del dispositivo.
+        También ayuda a recuperar celulares que no pasan
+        del logo, presentan fallas de encendido o errores
+        después de una actualización
+    </p>
+
+    `;
+
+}
+
+function mostrarPantalla(){
+
+    document.getElementById("textoInfo").style.display = "block";
+
+    document.getElementById("textoInfo").innerHTML = `
+
+    <h3>Cambio de Pantalla</h3>
+
+    <p>
+        El cambio de pantalla consiste en retirar la
+        pantalla dañada del celular y reemplazarla por
+        una nueva compatible con el dispositivo. Este
+        procedimiento incluye revisión del táctil,
+        calidad de imagen, brillo y sensibilidad de la
+        pantalla para asegurar un funcionamiento correcto.
+        Además, se realiza una inspección general del
+        equipo para verificar que no existan daños
+        adicionales causados por golpes o caídas
+    </p>
+
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
